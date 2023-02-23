@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script src="https://use.fontawesome.com/6e47fdd73a.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Abdul Samie | Web Assignment - 1</title>
+  <link href="https://fonts.googleapis.com/css?family=KoHo|Cormorant:400,700" rel="stylesheet">
+  <link rel="icon" href="./images/cv.png">
+  <style>
+    html {
+      box-sizing: border-box;
+    }
+    *, *:before, *:after {
+      box-sizing: inherit;
+    }
+    a {
+      color: #22a79c;
+    }
+    a:hover {
+      text-decoration: none;
+    }
+    .cWrap {
+      max-width: 950px;margin: 0 auto;padding: 50px 50px;overflow: hidden;
+    }
+    .hide {
+       display: none;
+    }
+    .uppercase {
+      text-transform: uppercase;
+    }
+    
+    body {
+      font-family: 'KoHo', sans-serif;margin: 0;
+    }
+    
+    /* Header and Footer*/
+    header, footer {
+      background: #014b5f;color: #dddddd;
+    }
+    /* header */
+    header {
+      padding-top: 50px;position: relative;
+    }
+    header h1, header h2 {
+      color: #EDF2F4;margin: 0;
+    }
+    .profile-img {border-radius: 50%;
+    }
+    .cWrap img {width: 200px;height: 200px;}
+    .download {position: absolute;bottom: 0;right: 0;}
+    
+    h1, h2 {
+      font-family: 'Arial', serif;
+      font-weight: 400;
+    }
+    h1 {
+      font-size: 50px;
+    }
+    h2 {
+      font-size: 30px;
+      margin-top: 0;
+    }
+    h3 {
+      margin: 0;
+    }
+    
+    /* footer */
+    footer {text-align: center;}
+    .be-in-touch a {padding: 10px;display: inline-block;}
+    
+    /* nav*/
+    nav {
+      text-align: center;background: white;position: fixed;top: 0;width: 100%;transition: all 0.3s ease-in-out;
+    }
+    nav a {
+      display: inline-block;padding: 15px 20px;text-decoration: none;text-transform: uppercase;font-weight: 700;transition: all 0.3s ease-in-out;
+    }
+    nav a:hover {
+      background: #22a79c;color: white;
+    }
+    
+    /* Expreince*/
+    .experience {
+      background: #ffffff;
+    }
+    h3 ~ p { margin: 0;}
+    .skills-inc {margin-bottom: 25px;}
+    .skills-inc p:first-of-type {margin-top: 0;}
+    
+    /*skills*/
+    .expertise {background: #ffffff;}
+    h3 ~ p {margin: 0;}
+    .skills-inc {margin-bottom: 25px;}
+    .skills-inc p:first-of-type {margin-top: 0;}
+    
+    .skills .cWrap{padding: 0;}
+    
+    /* Education*/
+    .qualific {background: linear-gradient(rgba(172, 245, 241, 0.8), rgba(90, 160, 160, 0.5)),url(./images/university.jpg) no-repeat fixed;background-size: cover;}
+    p + h3 {margin-top: 30px;}
+    
+    @media (min-width: 900px) {
+      .colsSmall {
+        width: 30%;
+        float: left;
+      }
+      .col-Spread {
+        width: 70%;
+        float: left;
+        padding-left: 20px;
+      }
+    }
+    @media (max-width: 899px){
+      header {
+        text-align: center;
+      }
+      .profile-img {
+        width: 200px;
+      }
+    }    
+  </style>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/js/all.min.js" integrity="sha256-qM7QTJSlvtPSxVRjVWNM2OfTAz/3k5ovHOKmKXuYMO4=" crossorigin="anonymous"></script> 
+</head>
+<body>
+  <header id="profile">
+    <nav>
+      <a href="index.html">Profile  <i class="fa fa-user"></i></a>
+      <a href="index.html#experience">Work Experience  <i class="fa fa-briefcase"></i></a>
+      <a href="index.html#qualific">Education  <i class="fa fa-school"></i></a>
+      <a href="projects.html">Project  <i class="fa fa-home"></i></a>
+      <a href="gallery.html">Gallery  <i class="fa fa-image"></i></a>
+      <a href="index.html#qualific">Contact  <i class="fa fa-id-badge"></i></a>
+    </nav>
+    <div class="cWrap">
+      <img class="profile-img colsSmall" src="images/AbdulSamie.JPG" alt="Abdul Samie">
+      <div class="col-Spread">
+        <h1><strong>Abdul Samie</strong></h1>
+        <h2>Front-End Software/Web Developer</h2>
+        <p style="text-align: justify;">With a Bachelor's degree in Computer Science and 4+ years of experience, I specialize in Android, Java, HTML, CSS, JS, Python, React Native, and C languages. My passion for software development and problem-solving has driven me to excel in these areas and constantly seek new challenges.</p>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Experience -->
+    <section id="experience" class="experience">
+      <div class="cWrap">
+        <h2><strong>Projects</strong></h2>
+
+        <div class="colsSmall">
+          <h3>C++ Project Information Security</h3>
+          <p class="uppercase">Dodge'em</p>
+          <p> July, 2019 - January, 2020</p>
+        </div>
+
+        <div class="col-Spread skills-inc">
+          <p style="text-align: justify;">A C++ project based on the programming file</p>
+          <p style="text-align: justify;">Key contributions:</p>
+          <ul>
+            <li style="text-align: justify;">Conducting Risk Assessments: One of the primary responsibilities of an IS-GRC intern is to assist with risk assessments. This involves identifying potential risks, analyzing the impact and likelihood of those risks, and making recommendations for mitigation strategies.</li>
+            <li style="text-align: justify;">Documenting Policies and Procedures: Another important contribution that an IS-GRC intern can make is to help develop and document policies and procedures related to information security and compliance. This involves researching best practices and industry standards, and working with the team to develop clear and concise policies and procedures.</li>
+            <li style="text-align: justify;">Assisting with Compliance Audits: Compliance audits are a critical part of IS-GRC, and as an intern, you may be asked to assist with these audits. This involves reviewing documentation, conducting interviews, and helping to prepare audit reports.</li>
+            <li style="text-align: justify;">Conducting Training and Awareness: Another important contribution that an IS-GRC intern can make is to assist with training and awareness efforts. This involves developing training materials, delivering training sessions, and working with other teams to ensure that everyone in the organization is aware of their roles and responsibilities related to information security and compliance.</li>
+            <li style="text-align: justify;">Contributing to Continuous Improvement: Finally, as an IS-GRC intern, you can make a valuable contribution to your team and organization by actively seeking out opportunities for continuous improvement. This involves identifying areas for improvement, making recommendations for changes, and helping to implement those changes.</li>
+
+          </ul>
+          </p>
+          <p>See more at <a href="https://www.linkedin.com/in/abdul-samie-0215371a6/" target="_blank">Linkedin</a>.</p>
+        </div>
+
+        <div class="colsSmall">
+          <h3>Machine Learning</h3>
+          <p class="uppercase">UI/UX Designing Management System</p>
+          <p>December 2020 - January 2023</p>
+        </div>
+        <div class="col-Spread skills-inc">
+          <p style="text-align: justify;">This person is in charge of establishing code standards for the front-end development and managing all tasks related to Ember. This includes responsibilities such as ensuring that the code meets established standards and guidelines, as well as overseeing the implementation of Ember into the development process.</p>
+          <p>Features:</p>
+          <ul>
+            <li style="text-align: justify;">Created a fully customized front-end framework, including UI/UX.</li>
+            <li style="text-align: justify;">Strong understanding of W3C web standard.</li>
+            <li style="text-align: justify;">Experience of dealing with cross-browser compatibility requirements.</li>
+            <li style="text-align: justify;">Manage Multiple Projects in a Deadline-Driven Environment.</li>
+            <li style="text-align: justify;">Developing unit tests, browser and device testing.</li>
+            <li style="text-align: justify;">Strong understanding of GIT.</li>
+            <li style="text-align: justify;">Troubleshoot and Debug Issues.</li>
+          </ul>
+          <p>See more at <a href="https://www.linkedin.com/in/abdul-samie-0215371a6/" target="_blank">Linkedin</a>.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer id="be-in-touch">
+    <div class="cWrap">
+      <h2>Lets be in touch!</h2>
+
+      <div class="be-in-touch">
+        <a href="mailto:abdulsamie488@gmail.com">abdulsamie488@gmail.com</a>
+        <a href="https://www.linkedin.com/in/abdul-samie-0215371a6/">LinkedIn</a>
+        <a href="https://github.com/AbdulSamieOfficial">Github</a>
+      </div>
+
+      <p> &copy Copyright 2023 by Abdul Samie</p>
+    </div>
+  </footer>
+</body>
+</html>

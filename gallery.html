@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>AbdulSamie | Gallery</title>
+		<link rel="icon" href="./images/cv.png">
+		<style>
+			html {
+				box-sizing: border-box;
+			  }
+			  *, *:before, *:after {
+				box-sizing: inherit;
+			  }
+			  a {
+				color: #22a79c;
+			  }
+			  a:hover {
+				text-decoration: none;
+			  }
+			  .cWrap {
+				max-width: 950px;margin: 0 auto;padding: 50px 50px;overflow: hidden;
+			  }
+			  .hide {
+				 display: none;
+			  }
+			  .uppercase {
+				text-transform: uppercase;
+			  }
+			  
+			  body {
+				font-family: 'KoHo', sans-serif;margin: 0;
+			  }
+			  
+			  /* Header and Footer*/
+			  header, footer {
+				position: fixed;
+				background: #014b5f;color: #dddddd;
+			  }
+			  /* header */
+			  header {
+				position: fixed;
+				padding-top: 50px;position: relative;
+			  }
+			  header h1, header h2 {
+				color: #EDF2F4;margin: 0;
+			  }
+			  .profile-img {border-radius: 50%;
+			  }
+			  .cWrap img {width: 200px;height: 200px;}
+			  .download {position: absolute;bottom: 0;right: 0;}
+			  
+			  h1, h2 {
+				font-family: 'Arial', serif;
+				font-weight: 400;
+			  }
+			  h1 {
+				font-size: 50px;
+			  }
+			  h2 {
+				font-size: 30px;
+				margin-top: 0;
+			  }
+			  h3 {
+				margin: 0;
+			  }
+			  
+			  /* footer */
+			  footer {text-align: center;}
+			  .be-in-touch a {padding: 10px;display: inline-block;}
+			  
+			  /* nav*/
+			  nav {
+				text-align: center;background: white;position: fixed;top: 0;width: 100%;transition: all 0.3s ease-in-out;
+			  }
+			  nav a {
+				display: inline-block;padding: 15px 20px;text-decoration: none;text-transform: uppercase;font-weight: 700;transition: all 0.3s ease-in-out;
+			  }
+			  nav a:hover {
+				background: #22a79c;color: white;
+			  }
+			  
+			  /* Expreince*/
+			  .experience {
+				background: #ffffff;
+			  }
+			  h3 ~ p { margin: 0;}
+			  .skills-inc {margin-bottom: 25px;}
+			  .skills-inc p:first-of-type {margin-top: 0;}
+			  
+			  /*skills*/
+			  .expertise {background: #ffffff;}
+			  h3 ~ p {margin: 0;}
+			  .skills-inc {margin-bottom: 25px;}
+			  .skills-inc p:first-of-type {margin-top: 0;}
+			  
+			  .skills .cWrap{padding: 0;}
+			  
+			  /* Education*/
+			  .qualific {background: linear-gradient(rgba(172, 245, 241, 0.8), rgba(90, 160, 160, 0.5)),url(./images/university.jpg) no-repeat fixed;background-size: cover;}
+			  p + h3 {margin-top: 30px;}
+			  
+			  @media (min-width: 900px) {
+				.colsSmall {
+				  width: 30%;
+				  float: left;
+				}
+				.col-Spread {
+				  width: 70%;
+				  float: left;
+				  padding-left: 20px;
+				}
+			  }
+			  @media (max-width: 899px){
+				header {
+				  text-align: center;
+				}
+				.profile-img {
+				  width: 200px;
+				}
+			  }
+		</style>
+		<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro|Roboto+Slab" rel="stylesheet">
+		<link rel="stylesheet" href="gallery.css"/>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<script>
+			$(document).ready(function() {
+				$("#slider > .tempst > ul > li").click(function() {
+					var currInd = $(this).index();
+					ftnScTo(currInd);
+				});
+
+				var scrollCheck = false;
+				function ftnScTo(currInd) {
+					var ci = $("#slider > .tempst > ul > li.active").index();
+					
+					if(currInd !== ci && !scrollCheck) {
+						scrollCheck = true;
+						var $li = $("#slider > .tempst > ul > li").eq(currInd);
+						
+						$li
+							.addClass("active")
+							.siblings()
+								.removeClass("active");
+
+						
+						let inClass = "slideUpIn";
+						let outClass = "slideUpOut";
+
+						var $countSl = $("#slider > .pon");
+						var $slide = $countSl.children().eq(currInd);
+						var $prSlide = $countSl.children().eq(ci);
+
+						if(currInd < ci) {
+							inClass = "slideDownIn";
+							outClass = "slideDownOut";
+						}
+						
+						$countSl.children().removeClass("active");
+						$prSlide.addClass(outClass);
+						$slide.addClass(inClass).addClass("active");
+						
+						setTimeout(() => {
+							$prSlide.removeClass(outClass);
+							$slide.removeClass(inClass).addClass("active");
+							$prSlide.find(".animated").removeClass("animated listItemIn");
+							scrollCheck = false;
+						}, 1000);
+
+						setTimeout(() => {
+							$slide.children(".headerr").addClass("listItemIn animated");
+						}, 500);
+
+					}
+				}
+				
+				$(window).bind('wheel mousewheel', function(event) {
+					var ci = $("#slider > .tempst > ul > li.active").index();
+					var ts = $("#slider > .tempst > ul > li").length;
+					if (event.originalEvent.deltaY >= 0) {
+						if(ts - 1 !== ci) {
+							ftnScTo(ci + 1);
+						}
+					}
+					else {
+						if(ci !== 0) {
+							ftnScTo(ci - 1);
+						}
+					}
+				});
+				
+
+				$("#slider > .tempst").addClass("pagerIn");
+				$("#slider > .pon > .item:first-child").addClass("pageIn active");
+				
+
+				setTimeout(() => {
+					$("#slider > .pon > .item:first-child > .headerr").addClass("listItemIn animated");
+				}, 500);
+				setTimeout(() => {
+					$("#slider > .pon > .item:first-child").removeClass("pageIn");
+				}, 1000);
+			});
+		</script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/js/all.min.js" integrity="sha256-qM7QTJSlvtPSxVRjVWNM2OfTAz/3k5ovHOKmKXuYMO4=" crossorigin="anonymous"></script> 
+	</head>
+  	<body>
+		<header id="profile">
+			<nav>
+				<a href="index.html">Profile  <i class="fa fa-user"></i></a>
+      <a href="index.html#experience">Work Experience  <i class="fa fa-briefcase"></i></a>
+      <a href="index.html#qualific">Education  <i class="fa fa-school"></i></a>
+      <a href="projects.html">Project  <i class="fa fa-home"></i></a>
+      <a href="gallery.html">Gallery  <i class="fa fa-image"></i></a>
+      <a href="index.html#qualific">Contact  <i class="fa fa-id-badge"></i></a>
+			</nav>
+		  </header>
+		<div id="slider">
+			<div class="tempst">
+				<ul>
+					<li class="active"></li>
+					<li></li>
+					<li></li>
+				</ul>
+			</div>
+
+			<div class="pon">
+				<div class="item purple">
+					<div class="headerr">
+						<div class="ind">1</div>
+						<div class="head">
+							<div class="title">
+								<h2>
+									Italian soda at Bytes
+								</h2>
+								<a href="https://goo.gl/maps/EjneHBEPksw">350 Serra Mall, Stanford, CA</a>
+							</div>
+							<div class="pon">
+								<p>
+									When's the last time you've had an Italian soda? It had been a while for me, but I wanted to join my friend for a non-caffeinated beverage at Bytes and I became reaquainted with the combination of fizzy water and artificial fruit syrup. Italian sodas are not so sweet as a normal soda and not so boring as a flavored carbonated water. The Italian sodas at Bytes also have no cream in them (or maybe they do if you ask; I haven't tried), which makes it a nice coffee shop alternative for the times when you're feeling a refreshing drink that doesn't have caffeine or milk.
+								</p>
+								<p>
+									<strong>Recommendation:</strong> Raspberry Italian soda
+								</p> </div>
+						</div>
+						<div class="img">
+							<img src="images/italian-soda.jpg" />
+						</div>
+					</div>
+				</div>
+
+				<div class="item blue">
+					<div class="headerr">
+						<div class="ind">2</div>
+						<div class="head">
+							<div class="title">
+								<h2>
+									Bubble tea at Pop Tea Bar
+								</h2>
+								<a href="https://goo.gl/maps/3jHRC2umZCy">456 Cambridge Ave, Palo Alto, CA</a>
+							</div>
+							<div class="pon">
+									<p>
+										When your boba craving strikes, head over to Pop Tea Bar, a cute little bubble tea shop on Cambridge Avenue. The menu is your standard bubble tea fare with nothing too adventurous on the menu -- no bubble tea floats, for example -- but the tapioca is fresh, the service is fast, and the tea is smooth and delicious! They have little bites to eat too, like popcorn chicken and eggrolls, in perfect snack-size portions. There's not too much seating, but there's a cute outdoor area in the back for warmer days. Pop Tea Bar isn't exactly on campus, but the Marguerite has got you covered. Ride the 1050A to California and El Camino and it's a short walk from there. (11 minutes total from the Gates Computer Science Building!)
+									</p>
+									<p>
+										<strong>Recommendation:</strong> Classic Milk Tea with tapioca + an order of popcorn chicken.
+									</p> </div>
+						</div>
+						<div class="img">
+							<img src="images/boba.jpg" />
+						</div>
+					</div>
+				</div>
+				<div class="item red">
+					<div class="headerr">
+						<div class="ind">3</div>
+						<div class="head">
+							<div class="title">
+									<h2>
+										Latte at CoHo
+									</h2>
+									<a href="https://goo.gl/maps/jaov5FhK5852">459 Lagunita Dr, Stanford, CA</a>
+							</div>
+							<div class="pon">
+								<p>
+									I can't tell you whether CoHo has a particularly amazing Vanilla Bean Latte, only because CoHo is the only place I've ever ordered a Vanilla Bean Latte from. I'm not even totally sure I know what a Vanilla Bean Latte is supposed to taste like. What I do know is the Vanilla Bean Latte I ordered on a whim from CoHo was delicious.
+								</p>
+								<p>
+									<strong>Recommendation:</strong> Vanilla Bean Latte
+								</p> </div>
+						</div>
+						<div class="img">
+							<img src="images/coho-coffee.jpg" />
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+  	</body>
+</html>
+

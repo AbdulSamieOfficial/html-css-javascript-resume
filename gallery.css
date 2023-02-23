@@ -1,0 +1,241 @@
+#slider > .pon > .item > .headerr {
+    width:700px;
+    background-color:#FFF;
+    border-radius:5px;
+    position: relative;
+    opacity:0;
+ }
+ #slider > .pon > .item > .headerr.animated {
+    opacity:1;
+ }
+ #slider > .pon > .item > .headerr > .ind {
+    position: absolute;
+    top:0;left:-50px;
+    font-size:36px;
+    color:#FFF;
+    font-weight: bold;
+ }
+ #slider > .pon > .item > .headerr > .ind::after {
+    content:' .';
+ }
+ #slider > .pon > .item > .headerr > .head > .title {
+    padding:15px 15px 0px 15px;
+ }
+ #slider > .pon > .item > .headerr > .head > .title > h2 {
+    margin:0;
+    padding:0;
+    line-height: 24px;
+ }
+ #slider > .pon > .item > .headerr > .head > .title > a {
+    font-size:14px;
+    font-weight: bold;
+ }
+ 
+ #slider > .pon > .item.blue {
+    background-color: #66a6b8;
+    background-image: linear-gradient(10deg,#66a6b8 20%, #5471B9 80%);
+ }
+ #slider > .pon > .item.blue a {
+    color: #66a6b8;
+ }
+ #slider > .pon > .item.red {
+    background-color: #f29c54;
+    background-image: linear-gradient(45deg,#f29c54 0%, #DB4367 100%);
+ }
+ #slider > .pon > .item.red a {
+    color: #f29c54;
+ }
+ #slider > .pon > .item.green {
+    background-color: #23af56;
+    background-image: linear-gradient(135deg,#23af56 0%, #67A79A 100%);
+ }
+ #slider > .pon > .item.green a {
+    color:#23af56;
+ }
+ #slider > .pon > .item.purple {
+    background-color: #412F2F;
+    background-image: linear-gradient(160deg,#412F2F 15%, #6B2686 85%);
+ }
+ #slider > .pon > .item.purple a {
+    color:#412F2F;
+ }
+ #slider {
+    width:100vw;
+    height:100vh;
+ }
+ #slider > .pon {
+    width:100%;
+    height:100%;
+    background-color:#1d1d1d;
+    position: relative;
+    overflow:hidden;
+ }
+ #slider > .pon > .item {
+    width:100%;
+    height:100%;
+    position: absolute;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    opacity:0;
+ }
+ #slider > .pon > .item.slideUpOut, #slider > .pon > .item.slideDownOut {
+    z-index:11;
+    opacity:1;
+ }
+ #slider > .pon > .item.slideUpIn, #slider > .pon > .item.slideDownIn {
+    z-index:12;
+    opacity: 1;
+ }
+ #slider > .pon > .item.active {
+    z-index:10;
+    opacity:1;
+ }
+ 
+ #slider > .tempst {
+    position: fixed;
+    right:-30px;
+    top:50%;
+    transform:translateY(-50%);
+    z-index:100;
+ }
+ #slider > .tempst > ul {}
+ #slider > .tempst > ul > li {
+    width:18px;
+    height:18px;
+    border:3px solid #FFF;
+    border-radius:50%;
+    margin-bottom:10px;
+    cursor:pointer;
+    transition:all ease-in-out 1s;
+ }
+ #slider > .tempst > ul > li.active {
+    background-color:#FFF;
+ }
+ 
+ #slider > .pon > .item > .headerr > .head > .pon {
+    max-height:45px;
+    overflow:hidden;
+    position: relative;
+    margin-bottom:5px;
+    transition:all linear 600ms;
+    position: absolute;
+    z-index:2;
+    background-color:#FFF;
+    padding:0 15px;
+ }
+ #slider > .pon > .item > .headerr > .head > .pon > p {
+    font-size:14px;
+    margin:5px 0;
+ }
+ #slider > .pon > .item > .headerr > .head > .pon::after {
+    content:'';
+    display:block;
+    position: absolute;
+    height:40px;
+    background-color:#FFF;
+    display:block;
+    width:100%;
+    left:0;
+    right:0;
+    font-size:14px;
+    line-height:20px;
+    bottom:0;
+    padding-left:15px;
+    opacity:1;
+    background: -moz-linear-gradient(top, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 80%, rgba(255,255,255,1) 100%);
+    background: -webkit-linear-gradient(top, rgba(255,255,255,0) 0%,rgba(255,255,255,1) 80%,rgba(255,255,255,1) 100%);
+    background: linear-gradient(to bottom, rgba(255,255,255,0) 0%,rgba(255,255,255,1) 80%,rgba(255,255,255,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#ffffff',GradientType=0 );
+ }
+ #slider > .pon > .item > .headerr > .img::after {
+    content:'';
+    display:block;
+    position: absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background-color:rgba(0, 0, 0, .5);
+    transition:all ease-in-out 300ms;
+    opacity:0;
+ }
+ #slider > .pon > .item > .headerr > .img > img {
+    width:100%;
+    display:block;
+ }
+ #slider > .pon > .item > .headerr > .head:hover + .img::after {
+    opacity:1;
+ }
+ #slider > .pon > .item > .headerr > .img {
+    overflow: hidden;
+    position: relative;
+    max-height:50%;
+    z-index:1;
+ }
+ 
+ #slider > .pon > .item > .headerr > .head:hover > .pon {
+    max-height: 600px;
+ }
+ #slider > .pon > .item > .headerr > .head:hover > .pon::after {
+    opacity:0;
+ }
+ 
+ .listItemIn {animation:listItemIn 0.75s ease-in-out; animation-fill-mode: forwards;}
+ @keyframes listItemIn {
+    0% {transform:scale(0);
+        opacity: 0;}
+    60% {transform:scale(1.1);
+        opacity: 1;}
+    100% {transform:scale(1);}
+ }
+ 
+ .slideUpOut {animation:slideUpOut 1s ease-in-out;transform-origin: top left;animation-fill-mode: forwards;}
+ @keyframes slideUpOut {
+    0% {transform: rotate(0);}
+    100% {transform: rotate(-90deg);}
+ }
+ 
+ .slideUpIn {animation:slideUpIn 1s ease-in-out;transform-origin: bottom right;animation-fill-mode: forwards;}
+ @keyframes slideUpIn {
+    0% {transform: rotate(-90deg);}
+    100% {transform: rotate(0deg);}
+ }
+ 
+ .pagerIn {animation:pagerIn 1s ease-in-out;animation-fill-mode: forwards;}
+ @keyframes pagerIn {
+    0% {right:-30px;}
+    100% {right:30px;}
+ }
+ 
+ .slideDownIn {animation:slideDownIn 1s ease-in-out;transform-origin: top left;animation-fill-mode: forwards;}
+ @keyframes slideDownIn {
+    0% {transform: rotate(-90deg);}
+    100% {transform: rotate(0deg);}
+ }
+ 
+ .pageIn {animation:pageIn 1s ease-in-out;animation-fill-mode: forwards;}
+ @keyframes pageIn {
+    0% {opacity:0;}
+    100% {opacity:1;}
+ }
+ 
+ body {margin:0;padding:0;font-family: 'Roboto Slab', serif;}
+ * {box-sizing:border-box;}
+ a {text-decoration: none;}
+ ul, li {list-style:none;margin:0;padding:0;}
+ 
+ .slideDownOut {animation:slideDownOut 1s ease-in-out;transform-origin: bottom right;animation-fill-mode: forwards;}
+ @keyframes slideDownOut {
+    0% {transform: rotate(0);}
+    100% {transform: rotate(-90deg);}
+ }
+ 
+ .slidePanel {animation:pagerIn 1s ease-in-out;animation-fill-mode: forwards;}
+ @keyframes pagerIn {
+    0% {right:-30px;}
+    100% {right:30px;}
+ }
+ 
+ 
+ 
